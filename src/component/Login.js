@@ -6,11 +6,18 @@ export default function Login() {
   // const { setRatedList } = useContext(React.createContext({}));
   const [loading, setLoading] = useState(false);
   const [usernameInput, setUsernameInput] = useState('');
-  const { user, setUser } = useState({});
+  const [passwordInput, setPasswordInput] = useState('');
+  const [user, setUser] = useState({});
 
   const handleUsernameChange = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setUsernameInput(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    //console.log(e.target.value);
+    setPasswordInput(e.target.value);
+    //console.log(passwordInput);
   };
 
   const login = async (username, password) => {
@@ -38,6 +45,7 @@ export default function Login() {
       localStorage.setItem('user', JSON.stringify(userData));
       setUser(userData);
       setLoading(false);
+      console.log(user);
     } catch (e) {
       setLoading(false);
       throw e;
@@ -53,29 +61,34 @@ export default function Login() {
           <h1>Login</h1>
         </div>
         <br />
-        <label className="loginInputName">Username</label>
+        <label className="loginInputName">
+          {/* <label className="loginInputName" for="username"> */}
+          Username
+        </label>
         <input
           className="input"
-          // type="text"
+          type="text"
           // id="username"
-          //name="username"
-          // value={usernameInput}
-          onChange={() => handleUsernameChange}
+          name="username"
+          value={usernameInput}
+          onChange={handleUsernameChange}
         />
         <br />
         <label className="loginInputName">Password</label>
         <input
           className="input"
-          // type="password"
+          type="password"
           // id="password"
-          // name="password"
+          name="password"
+          value={passwordInput}
+          onChange={handlePasswordChange}
         />
         <br />
         <button
           className="submitButton"
-          // onClick={() => {
-          //   login(username, password);
-          // }}
+          onClick={() => {
+            login(usernameInput, passwordInput);
+          }}
         >
           SUBMIT
         </button>

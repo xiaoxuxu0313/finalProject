@@ -10,14 +10,13 @@ export default function Tabs(props) {
     <div>
       {tabs.map((tab) => {
         return (
-          <Link to={`/${tab}`}>
+          <Link to={`/${tab}`} key={tab}>
             <button
-              key={tab}
               className={`tab ${props.activeTab === tab ? 'active' : ''}`}
-              onClick={() => {
-                //onClick不要打错
-                props.onTabClick(tab);
-              }}
+              // onClick={() => {
+              //   //onClick不要打错
+              //   props.onTabClick(tab);
+              // }}
             >
               {tab}
             </button>
