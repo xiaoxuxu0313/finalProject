@@ -73,9 +73,8 @@ export default function MovieCardDetails(props) {
         <div className="companyList">
           {movieDetails.production_companies.map((company) => {
             return (
-              <div className="company">
+              <div className="company" key={company.id}>
                 <img
-                  key={company.id}
                   className="companyImg"
                   src={getImageUrl(company.logo_path)}
                 />
