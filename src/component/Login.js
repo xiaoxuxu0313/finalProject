@@ -26,7 +26,7 @@ export default function Login() {
       const {
         data: { request_token },
       } = await client.get(`/authentication/token/new`);
-      await client.post(`//authentication/token/validate_with_login`, {
+      await client.post('/authentication/token/validate_with_login', {
         username,
         password,
         request_token,
