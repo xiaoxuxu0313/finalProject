@@ -53,26 +53,22 @@ export default function Login() {
           <h1>Login</h1>
         </div>
         <br />
-        <label className="loginInputName" for="username">
-          Username
-        </label>
+        <label className="loginInputName">Username</label>
         <input
           className="input"
-          type="text"
-          id="username"
+          // type="text"
+          // id="username"
           //name="username"
           // value={usernameInput}
           onChange={() => handleUsernameChange}
         />
         <br />
-        <label className="loginInputName" for="password">
-          Password
-        </label>
+        <label className="loginInputName">Password</label>
         <input
           className="input"
-          type="password"
-          id="password"
-          name="password"
+          // type="password"
+          // id="password"
+          // name="password"
         />
         <br />
         <button
