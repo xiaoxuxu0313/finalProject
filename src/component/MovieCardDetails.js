@@ -9,7 +9,7 @@ export default function MovieCardDetails(props) {
 
   useEffect(() => {
     fetchMovieDetails(params.id).then((data) => {
-      console.log(data);
+      //console.log(data);
       setMovieDetails(data);
     });
   }, []);

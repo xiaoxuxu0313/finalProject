@@ -45,7 +45,7 @@ export default function Login() {
       localStorage.setItem('user', JSON.stringify(userData));
       setUser(userData);
       setLoading(false);
-      console.log(user);
+      //console.log(userData);
     } catch (e) {
       setLoading(false);
       throw e;
